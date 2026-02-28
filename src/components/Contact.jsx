@@ -21,6 +21,10 @@ const Contact = () => {
         const formSubmitData = new FormData(e.target);
         formSubmitData.append("access_key", "39a6330d-9cd9-4de2-9046-50241723e0e2");
 
+        // Customizing the email received
+        formSubmitData.append("subject", `New Project Inquiry: ${formData.projectType || 'General'} from ${formData.name}`);
+        formSubmitData.append("from_name", "LP Nexus Website Portal");
+
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
