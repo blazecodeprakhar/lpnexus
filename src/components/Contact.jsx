@@ -12,14 +12,35 @@ const Contact = () => {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Dummy submission logic
-        console.log(formData);
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-        setFormData({ name: '', email: '', phone: '', projectType: '', budget: '', message: '' });
+        setLoading(true);
+
+        const formSubmitData = new FormData(e.target);
+        formSubmitData.append("access_key", "39a6330d-9cd9-4de2-9046-50241723e0e2");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formSubmitData
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                setSubmitted(true);
+                setFormData({ name: '', email: '', phone: '', projectType: '', budget: '', message: '' });
+                setTimeout(() => setSubmitted(false), 5000);
+            } else {
+                alert("Error sending message. Please try again later.");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong! Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleChange = (e) => {
@@ -138,9 +159,9 @@ const Contact = () => {
                                     <textarea required name="message" value={formData.message} onChange={handleChange} rows="4" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Tell us about your project..."></textarea>
                                 </div>
 
-                                <button type="submit" className="w-full bg-primary hover:bg-indigo-500 text-white font-bold py-4 rounded-lg flex items-center justify-center transition-all hover:shadow-[0_0_20px_rgba(79,70,229,0.5)]">
-                                    Start Your Project
-                                    <Send className="w-5 h-5 ml-2" />
+                                <button disabled={loading} type="submit" className="w-full bg-primary hover:bg-indigo-500 text-white font-bold py-4 rounded-lg flex items-center justify-center transition-all hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] disabled:opacity-75 disabled:cursor-not-allowed">
+                                    {loading ? 'Sending...' : 'Start Your Project'}
+                                    {!loading && <Send className="w-5 h-5 ml-2" />}
                                 </button>
                             </form>
                         )}
