@@ -177,7 +177,9 @@ const Pricing = () => {
                                     </div>
 
                                     <a
-                                        href="#contact"
+                                        href={`https://wa.me/918901028029?text=${encodeURIComponent(`Hi LP Nexus, I am interested in the *${plan.name}* package priced at *${plan.price}*. Can we discuss this project?`)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className={`mt-8 w-full block text-center py-3 px-6 rounded-lg font-bold transition-all duration-300 hover:scale-[1.02] ${plan.popular
                                             ? 'bg-primary text-white hover:bg-indigo-500 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)]'
                                             : 'bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-white/20'
