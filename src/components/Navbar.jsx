@@ -13,8 +13,13 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToTop = (e) => {
+        if (e) e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     const navLinks = [
-        { name: 'Home', href: '#home' },
+        { name: 'Home', href: '#home', onClick: scrollToTop },
         { name: 'Services', href: '#services' },
         { name: 'About', href: '#about' },
         { name: 'Portfolio', href: '#portfolio' },
@@ -27,12 +32,12 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <div className="flex items-center">
-                        <Rocket className="h-8 w-8 text-primary mr-2" />
-                        <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                    <button onClick={scrollToTop} className="flex items-center group cursor-pointer">
+                        <Rocket className="h-8 w-8 text-primary mr-2 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                        <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 group-hover:from-white group-hover:to-white transition-all duration-300">
                             LP Nexus
                         </span>
-                    </div>
+                    </button>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center space-x-8">
@@ -40,14 +45,15 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
+                                onClick={link.onClick}
                                 className="text-slate-300 hover:text-white transition-colors text-sm font-medium tracking-wide hover:text-shadow-glow"
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <a href="#contact" className="bg-primary hover:bg-indigo-500 text-white px-5 py-2 rounded-full font-medium transition-all hover:shadow-[0_0_15px_rgba(79,70,229,0.5)]">
+                        <button onClick={scrollToTop} className="bg-primary hover:bg-indigo-500 text-white px-5 py-2 rounded-full font-medium transition-all hover:shadow-[0_0_15px_rgba(79,70,229,0.5)] active:scale-95">
                             Get Started
-                        </a>
+                        </button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -70,19 +76,24 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => {
+                                    if (link.onClick) link.onClick(e);
+                                    setIsMobileMenuOpen(false);
+                                }}
                                 className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md"
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <a
-                            href="#contact"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                        <button
+                            onClick={() => {
+                                scrollToTop();
+                                setIsMobileMenuOpen(false);
+                            }}
                             className="block w-full text-center mt-4 bg-primary text-white px-5 py-3 rounded-md font-medium"
                         >
                             Get Started
-                        </a>
+                        </button>
                     </div>
                 </div>
             )}
