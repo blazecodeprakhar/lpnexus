@@ -1,6 +1,10 @@
 import { Rocket, Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <footer className="bg-black border-t border-white/10 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,12 +12,12 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
                     <div className="md:col-span-1">
-                        <div className="flex items-center mb-6">
-                            <Rocket className="h-8 w-8 text-primary mr-2" />
-                            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        <button onClick={scrollToTop} className="flex items-center mb-6 group cursor-pointer focus:outline-none">
+                            <Rocket className="h-8 w-8 text-primary mr-2 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 group-hover:from-white group-hover:to-white transition-all duration-300">
                                 LP Nexus
                             </span>
-                        </div>
+                        </button>
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
                             We turn your ideas into powerful digital experiences. A student led web development startup specializing in high-quality websites and applications.
                         </p>
@@ -31,7 +35,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li><a href="#home" className="text-slate-400 hover:text-primary transition-colors text-sm">Home</a></li>
                             <li><a href="#about" className="text-slate-400 hover:text-primary transition-colors text-sm">About Us</a></li>
-                            <li><a href="#Work" className="text-slate-400 hover:text-primary transition-colors text-sm">Work</a></li>
+                            <li><a href="#portfolio" className="text-slate-400 hover:text-primary transition-colors text-sm">Work</a></li>
                             <li><a href="#pricing" className="text-slate-400 hover:text-primary transition-colors text-sm">Pricing Plans</a></li>
                             <li><a href="#contact" className="text-slate-400 hover:text-primary transition-colors text-sm">Contact Support</a></li>
                         </ul>
