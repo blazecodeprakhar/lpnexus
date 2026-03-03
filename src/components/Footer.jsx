@@ -15,7 +15,7 @@ const Footer = () => {
                             </span>
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                            We turn your ideas into powerful digital experiences. A student-led web development startup specializing in high-quality websites and applications.
+                            We turn your ideas into powerful digital experiences. A student led web development startup specializing in high-quality websites and applications.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" className="text-slate-400 hover:text-white hover:-translate-y-1 transition-all"><Facebook className="w-5 h-5" /></a>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li><a href="#home" className="text-slate-400 hover:text-primary transition-colors text-sm">Home</a></li>
                             <li><a href="#about" className="text-slate-400 hover:text-primary transition-colors text-sm">About Us</a></li>
-                            <li><a href="#portfolio" className="text-slate-400 hover:text-primary transition-colors text-sm">Portfolio</a></li>
+                            <li><a href="#Work" className="text-slate-400 hover:text-primary transition-colors text-sm">Work</a></li>
                             <li><a href="#pricing" className="text-slate-400 hover:text-primary transition-colors text-sm">Pricing Plans</a></li>
                             <li><a href="#contact" className="text-slate-400 hover:text-primary transition-colors text-sm">Contact Support</a></li>
                         </ul>
@@ -40,17 +40,16 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6 text-lg">Our Services</h4>
                         <ul className="space-y-3">
-                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Portfolio Websites</a></li>
-                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Business Websites</a></li>
-                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">E-Commerce Stores</a></li>
-                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Payment Gateway Integrations</a></li>
-                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Custom Full Stack Apps</a></li>
+                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Portfolio & Personal Websites</a></li>
+                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">E-Commerce Development</a></li>
+                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Payment Gateway Setup</a></li>
+                            <li><a href="#services" className="text-slate-400 hover:text-secondary transition-colors text-sm">Custom Web Applications</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="text-white font-bold mb-6 text-lg">Subscribe</h4>
-                        <p className="text-slate-400 text-sm mb-4">Stay updated with our latest offers and web development tips.</p>
+                        <p className="text-slate-400 text-sm mb-4">Stay updated with our latest offers.</p>
                         <form className="flex rounded-md overflow-hidden" onSubmit={(e) => e.preventDefault()}>
                             <input type="email" placeholder="Your email address" className="bg-white/5 border-none focus:ring-0 px-4 py-2 w-full text-white text-sm outline-none" />
                             <button type="submit" className="bg-primary text-white px-4 py-2 text-sm font-bold hover:bg-indigo-500 transition-colors">Subscribe</button>

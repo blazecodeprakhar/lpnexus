@@ -28,7 +28,7 @@ const Hero = () => {
                 </h1>
 
                 <p className="max-w-2xl text-lg md:text-xl text-slate-300 mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                    From portfolio websites to full-stack business systems — <span className="text-white font-semibold">LP Nexus</span> turns your ideas into reality with modern technologies.
+                    From portfolio websites to full-stack business systems <span className="text-white font-semibold">LP Nexus</span> turns your ideas into reality with modern technologies.
                 </p>
 
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>

@@ -74,7 +74,12 @@ const Contact = () => {
                             </div>
                             <div className="ml-6 flex-grow">
                                 <h4 className="text-lg font-bold text-white mb-1">Email Us</h4>
-                                <p className="text-slate-400">hello@lpnexus.com</p>
+                                <a
+                                    href="mailto:lpnexus02@gmail.com?subject=Project%20Inquiry&body=Hi%20LP%20Nexus,%20I%20want%20to%20discuss%20a%20project."
+                                    className="text-slate-400 hover:text-primary transition-colors duration-300"
+                                >
+                                    lpnexus02@gmail.com
+                                </a>
                             </div>
                         </div>
 
@@ -84,8 +89,13 @@ const Contact = () => {
                             </div>
                             <div className="ml-6 flex-grow">
                                 <h4 className="text-lg font-bold text-white mb-1">WhatsApp / Call</h4>
-                                <p className="text-slate-400">+91 98765 43210</p>
-                                <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="text-sm text-green-400 mt-2 inline-block hover:underline font-semibold">
+                                <p className="text-slate-400">+91 89010 28029</p>
+                                <a
+                                    href="https://wa.me/918901028029?text=Hi%20LP%20Nexus,%20I%20want%20to%20discuss%20a%20project."
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-sm text-green-400 mt-2 inline-block hover:underline font-semibold"
+                                >
                                     Chat on WhatsApp &rarr;
                                 </a>
                             </div>
@@ -97,7 +107,7 @@ const Contact = () => {
                             </div>
                             <div className="ml-6 flex-grow">
                                 <h4 className="text-lg font-bold text-white mb-1">Location</h4>
-                                <p className="text-slate-400">India-Based Tech Startup <br /> Operating Globally 🌍</p>
+                                <p className="text-slate-400">India-Based Tech Startup <br /> Operating Globally </p>
                             </div>
                         </div>
 
@@ -151,10 +161,12 @@ const Contact = () => {
                                     <label className="block text-sm font-medium text-slate-300 mb-2">Estimated Budget Range</label>
                                     <select required name="budget" value={formData.budget} onChange={handleChange} className="w-full bg-[#1a1b26] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
                                         <option value="" disabled hidden>Select budget range</option>
-                                        <option value="5k-10k">₹5,000 - ₹10,000</option>
-                                        <option value="10k-25k">₹10,000 - ₹25,000</option>
-                                        <option value="25k-50k">₹25,000 - ₹50,000</option>
-                                        <option value="50k+">₹50,000+</option>
+                                        <option value="500-1k">₹500 – ₹1000</option>
+                                        <option value="1k-2k">₹1000 – ₹2000</option>
+                                        <option value="2.5k-8k">₹2500 – ₹8000</option>
+                                        <option value="6k-10k">₹6000 - ₹10000</option>
+                                        <option value="5k-15k">₹5000 - ₹15000</option>
+                                        <option value="5k-15k">₹5000 - ₹15000</option>
                                     </select>
                                 </div>
 
