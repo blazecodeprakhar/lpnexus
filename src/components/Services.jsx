@@ -53,7 +53,7 @@ const Services = () => {
                             <p className="text-slate-400 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
-                            <a href="#contact" className="inline-flex items-center text-primary font-medium group-hover:text-neonBlue transition-colors">
+                            <a href="#portfolio" className="inline-flex items-center text-primary font-medium group-hover:text-neonBlue transition-colors">
                                 Learn More
                                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                             </a>
